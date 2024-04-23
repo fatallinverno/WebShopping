@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 가입</title>
+</head>
+<body>
+<table>
+<form action="/WebShopping/user_join" method="post" enctype="multipart/form-data">
+    <tr>
+        아이디: <input type="text" name="id">
+        <button id="idChk" onclick="idChk()">중복 체크</button>
+        <br>
+    </tr>
+    <tr>
+        비밀번호: <input type="text" name="password"> <br>
+    </tr>
+    <tr>
+        비밀번호 확인: <input type="text" name="passwordChk"> <br>
+    </tr>
+    <tr>
+        이름: <input type="text" name="name"> <br>
+    </tr>
+    <tr>
+        연락처: <input type="text" name="phone"> <br>
+    </tr>
+    <tr>
+        이메일: <input type="text" name="email"> <br>
+    </tr>
+    <tr>
+        주소: <input type="text" name="address">
+        <button id="addressSearch" onclick="addressSearch()">주소검색</button>
+        <br>
+    </tr>
+</form>
+</table>
+<input type="submit" value="회원가입">
+<button id="cancle" onclick="cancle()">취소</button>
+
+</body>
+
+<script>
+    const idChk = () => {
+        alert("중복 아니예요~");
+    }
+
+    const addressSearch = () => {
+        alert("주소 검색");
+    }
+
+    const cancle = () => {
+        alert("취소");
+    }
+
+</script>
+
+</html>
