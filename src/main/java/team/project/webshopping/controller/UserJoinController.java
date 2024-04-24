@@ -1,11 +1,12 @@
 package team.project.webshopping.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import team.project.webshopping.dto.UserJoinDTO;
 import team.project.webshopping.service.UserJoinService;
 
 import java.io.IOException;
@@ -18,12 +19,13 @@ public class UserJoinController {
 
     @GetMapping("/userjoin")
     public String userJoinForm() {
-        return "userjoin";
+        return "common/userjoin";
     }
 
-    @PostMapping("/user_join")
-    public String userJoin()  throws IOException {
-        System.out.println("컨트롤 탔나?");
+    @PostMapping("/userjoin")
+    public String userJoin(@ModelAttribute UserJoinDTO userJoinDTO)  throws IOException {
+        System.out.println("userJoinDTO = " + userJoinDTO);
+        userJoinService.userJoin(userJoinDTO);
 
         return "index";
     }
