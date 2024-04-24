@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 public class BaseEntity {
-
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdTime;
@@ -22,5 +21,4 @@ public class BaseEntity {
     @UpdateTimestamp
     @Column(insertable = false)
     private LocalDateTime updatedTime;
-
 }
